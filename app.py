@@ -171,18 +171,15 @@ def render_hero_section():
 def render_query_section():
     st.markdown("### 🔍 Enter your travel query and get flight and hotel information:")
     
-    # Create columns for better layout
-    col1, col2, col3 = st.columns([1, 3, 1])
+
+    user_input = st.text_area(
+        'Travel Query',
+        height=150,
+        key='query',
+        placeholder='Type your travel query here...',
+    )
     
-    with col2:
-        user_input = st.text_area(
-            'Travel Query',
-            height=150,
-            key='query',
-            placeholder='Type your travel query here...',
-        )
-        
-        search_button = st.button('Get Travel Information', type='primary', use_container_width=True)
+    search_button = st.button('Get Travel Information', type='primary', use_container_width=True)
     
     return user_input, search_button
 
@@ -255,7 +252,7 @@ def render_email_form():
 def render_footer():
     st.markdown('''
         <div style="text-align: center; padding: 2rem; color: #666; border-top: 1px solid #eee; margin-top: 3rem;">
-            <p>🤖 Powered by Advanced AI Technology | Built for seamless travel experiences</p>
+            <p>🤖 Powered by Advanced AI Technology | Built with ❤️ by Parth Panchal</p>
         </div>
     ''', unsafe_allow_html=True)
 
@@ -273,7 +270,7 @@ def main():
     render_custom_css()
     
     # Main container
-    st.markdown('<div class="main-container">', unsafe_allow_html=True)
+    # st.markdown('<div class="main-container">', unsafe_allow_html=True)
     
     # Hero section
     render_hero_section()
