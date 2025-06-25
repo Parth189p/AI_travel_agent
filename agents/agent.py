@@ -45,6 +45,8 @@ EMAILS_SYSTEM_PROMPT = """Your task is to convert structured markdown-like text 
 
 - Do not include a ```html preamble in your response.
 - The output should be in proper HTML format, ready to be used as the body of an email.
+- Use the appropriate currency symbol for prices that you are getting from the tools.
+
 Here is an example:
 <example>
 Input:

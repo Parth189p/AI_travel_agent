@@ -40,7 +40,7 @@ def hotels_finder(params: HotelsInput):
         'q': params.q,
         'check_in_date': params.check_in_date,
         'check_out_date': params.check_out_date,
-        'currency': 'USD',
+        'currency': 'INR',
         'adults': params.adults,
         'children': params.children,
         'rooms': params.rooms,
