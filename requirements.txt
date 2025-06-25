@@ -6,3 +6,4 @@ langgraph
 sendgrid
 serpapi
 dotenv
+langchain-google-genai

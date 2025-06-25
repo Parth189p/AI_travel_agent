@@ -10,7 +10,7 @@ from email.mime.text import MIMEText
 
 from dotenv import load_dotenv
 from langchain_core.messages import AnyMessage, HumanMessage, SystemMessage, ToolMessage
-from langchain_openai import ChatOpenAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langgraph.checkpoint.memory import MemorySaver
 from langgraph.graph import END, StateGraph
 
@@ -34,6 +34,7 @@ TOOLS_SYSTEM_PROMPT = f"""You are a smart travel agency. Use the tools to look u
     I want to have in your output links to hotels websites and flights websites (if possible).
     I want to have as well the logo of the hotel and the logo of the airline company (if possible).
     In your output always include the price of the flight and the price of the hotel and the currency as well (if possible).
+    and the prices may be in dollar $ or rupee ₹ or euro €.
     for example for hotels-
     Rate: $581 per night
     Total: $3,488
@@ -126,7 +127,7 @@ class Agent:
 
     def __init__(self):
         self._tools = {t.name: t for t in TOOLS}
-        self._tools_llm = ChatOpenAI(model='gpt-4o').bind_tools(TOOLS)
+        self._tools_llm = ChatGoogleGenerativeAI(model='gemini-2.5-flash').bind_tools(TOOLS)
 
         builder = StateGraph(AgentState)
         builder.add_node('call_tools_llm', self.call_tools_llm)
@@ -151,7 +152,7 @@ class Agent:
 
     def email_sender(self, state: AgentState, to_email: str = None):
         print('Sending email')
-        email_llm = ChatOpenAI(model='gpt-4o', temperature=0.1)
+        email_llm = ChatGoogleGenerativeAI(model='gemini-2.5-flash', temperature=0.1)
         email_message = [SystemMessage(content=EMAILS_SYSTEM_PROMPT), HumanMessage(content=state['messages'][-1].content)]
         email_response = email_llm.invoke(email_message)
         print('Email content:', email_response.content)
