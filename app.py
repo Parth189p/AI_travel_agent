@@ -221,8 +221,9 @@ def render_email_form():
         </div>
     ''', unsafe_allow_html=True)
     
+    # Add a non-empty label to avoid Streamlit warning
     send_email_option = st.radio(
-        '', 
+        'Send email option',  # <-- Added label here
         ('No', 'Yes'),
         horizontal=True
     )

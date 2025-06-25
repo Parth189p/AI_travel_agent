@@ -34,7 +34,7 @@ def flights_finder(params: FlightsInput):
     params = {
         'api_key': os.environ.get('SERPAPI_API_KEY'),
         'engine': 'google_flights',
-        'hl': 'en',
+        'deep_search': 'true',
         'departure_id': params.departure_airport,
         'arrival_id': params.arrival_airport,
         'outbound_date': params.outbound_date,
