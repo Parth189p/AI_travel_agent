@@ -11,7 +11,6 @@ Welcome to the AI Travel Agent repository! This project demonstrates how to leve
 ## Getting Started
 Clone the repository, set up the virtual environment, and install the required packages
 
-1. git clone git@github.com:nirbar1985/ai-travel-agent.git
 
 1. ( In case you have python version 3.11.9 installed in pyenv)
    ```shell script
@@ -35,7 +34,6 @@ Clone the repository, set up the virtual environment, and install the required p
     ```plaintext
     OPENAI_API_KEY=your_openai_api_key
     SERPAPI_API_KEY=your_serpapi_api_key
-    SENDGRID_API_KEY=your_sendgrid_api_key
 
     # Observability variables
     LANGCHAIN_API_KEY=your_langchain_api_key
@@ -43,7 +41,7 @@ Clone the repository, set up the virtual environment, and install the required p
     LANGCHAIN_PROJECT=ai_travel_agent
     ```
 
-Make sure to replace the placeholders (`your_openai_api_key`, `your_serpapi_api_key`, `your_langchain_api_key`, `your_sendgrid_api_key`) with your actual keys.
+Make sure to replace the placeholders (`your_openai_api_key`, `your_serpapi_api_key`, `your_langchain_api_key`, ) with your actual keys.
 This version includes the necessary environment variables for OpenAI, SERPAPI, LangChain, and SendGrid and the LANGCHAIN_TRACING_V2 and LANGCHAIN_PROJECT configurations.
 
 ### How to Run the Chatbot
@@ -82,9 +80,4 @@ The email integration is implemented using the **human-in-the-loop** feature, al
 ![photo5](https://github.com/user-attachments/assets/02641ce1-b303-4020-9849-7d77f596a6ba)
 ![photo6](https://github.com/user-attachments/assets/1c3d8a35-148d-4144-829a-b1db6e3b3dde)
 
-## Learn More
-For a detailed explanation of the underlying technology, check out the full article on Medium:
-[Building Production-Ready AI Agents with LangGraph: A Real-Life Use Case](https://medium.com/cyberark-engineering/building-production-ready-ai-agents-with-langgraph-a-real-life-use-case-7bda34c7f4e4))
 
-## License
-Distributed under the MIT License. See LICENSE.txt for more information.
